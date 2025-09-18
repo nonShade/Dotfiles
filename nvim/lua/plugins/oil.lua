@@ -19,7 +19,7 @@ return {
     })
 
     -- File explorer keymaps
-    vim.keymap.set("n", "<leader>fe", "<CMD>Oil<CR>", { desc = "File explorer (Oil)" })
+    vim.keymap.set("n", "<leader>e", "<CMD>Oil<CR>", { desc = "File explorer (Oil)" })
     -- vim.keymap.set("n", "<leader>fE", require("oil").toggle_float, { desc = "File explorer (float)" })
 
     vim.api.nvim_create_autocmd("FileType", {
