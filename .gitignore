@@ -13,6 +13,7 @@ github-copilot
 gtk-3.0
 gtk-4.0
 lazydocker
+obs-studio
 lazygit
 mcphub
 menus
@@ -33,7 +34,7 @@ xfce4
 xsettingsd
 yay
 yazi
-QtProject.con
+QtProject.conf
+xarchiver
 mimeapps.lis
-user-dirs.dir
-user-dirs.local
+pavucontrol.ini
