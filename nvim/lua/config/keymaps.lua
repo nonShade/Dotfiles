@@ -1,6 +1,4 @@
 local keymap = vim.keymap
-local opts = { noremap = true, silent = true }
-local utils = require("config.utils")
 
 keymap.set("n", "x", '"_x')
 
@@ -19,12 +17,6 @@ keymap.set("n", "<C-a>", ":%yank<CR>", { noremap = true, silent = true })
 keymap.set("n", "<Leader>w", ":update<Return>", { desc = "Save file" })
 keymap.set("n", "<Leader>q", ":quit<Return>", { desc = "Quit" })
 keymap.set("n", "<Leader>Q", ":qa<Return>", { desc = "Quit all" })
-
--- Tab operations  
-keymap.set("n", "te", ":tabedit", { desc = "New tab" })
-keymap.set("n", "<tab>", ":tabnext<Return>", { desc = "Next tab" })
-keymap.set("n", "<s-tab>", ":tabprev<Return>", { desc = "Previous tab" })
-keymap.set("n", "tw", ":tabclose<Return>", { desc = "Close tab" })
 
 -- Split operations (organized under 's' group)
 keymap.set("n", "ss", ":split<Return>", { desc = "Split horizontal" })
@@ -49,6 +41,3 @@ keymap.set("n", "<leader>bd", ":bdelete<CR>", { desc = "Delete buffer" })
 keymap.set("n", "<leader>bD", '<Esc>:%bdelete|edit #|normal`"<Return>', { desc = "Delete other buffers" })
 keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next buffer" })
 keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous buffer" })
-
--- Custom save with notification
-vim.api.nvim_set_keymap("n", "<C-s>", ":lua require('config.utils').save_file()<CR>", { noremap = true, silent = true })

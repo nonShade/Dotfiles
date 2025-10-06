@@ -1,3 +1,4 @@
+vim.g.mapleader = " "
 vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
@@ -16,6 +17,7 @@ vim.opt.laststatus = 3
 vim.opt.expandtab = true
 vim.opt.scrolloff = 10
 vim.opt.inccommand = "split"
+vim.opt.swapfile = false
 vim.opt.ignorecase = true
 vim.opt.smarttab = true
 vim.opt.breakindent = true
@@ -32,9 +34,4 @@ vim.opt.mouse = "a"
 vim.opt.clipboard:append("unnamedplus")
 vim.opt.formatoptions:append({ "r" })
 
-vim.g.lazyvim_picker = "snacks"
-
-vim.diagnostic.config({
-  virtual_text = true,
-  underline = true,
-})
+vim.cmd(":hi statusline guibg=NONE")

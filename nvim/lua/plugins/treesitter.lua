@@ -1,9 +1,4 @@
-return {
-  "nvim-treesitter/nvim-treesitter",
-  version = false, -- last release is way too old and doesn't work on Windows
-  build = ":TSUpdate",
-
-  opts = {
+require("nvim-treesitter.configs").setup({
     highlight = { enable = true },
     indent = { enable = true },
     ensure_installed = {
@@ -54,5 +49,4 @@ return {
         goto_previous_end = { ["[F"] = "@function.outer", ["[C"] = "@class.outer", ["[A"] = "@parameter.inner" },
       },
     },
-  },
-}
+})
