@@ -41,3 +41,6 @@ keymap.set("n", "<leader>bd", ":bdelete<CR>", { desc = "Delete buffer" })
 keymap.set("n", "<leader>bD", '<Esc>:%bdelete|edit #|normal`"<Return>', { desc = "Delete other buffers" })
 keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next buffer" })
 keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous buffer" })
+
+-- Store.nvim (Plugin Manager)
+keymap.set("n", "<leader>ps", ":Store<CR>", { desc = "Open Plugin Store" })

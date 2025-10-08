@@ -8,8 +8,9 @@ vim.pack.add({
 	{ src = "https://github.com/rafamadriz/friendly-snippets" },
 	{ src = "https://github.com/L3MON4D3/LuaSnip" },
 	{ src = "https://github.com/onsails/lspkind.nvim" },
-
+	{ src = "https://github.com/OXY2DEV/markview.nvim" },
 	-- Plugins
+	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/mason-org/mason-lspconfig.nvim" },
@@ -23,7 +24,7 @@ vim.pack.add({
 	{ src = "https://github.com/stevearc/conform.nvim" },
 	{ src = "https://github.com/zbirenbaum/copilot.lua" },
 	{ src = "https://github.com/folke/flash.nvim" },
-
+	{ src = "https://github.com/alex-popov-tech/store.nvim", depends = { "markview.nvim" } },
 	{
 		src = "https://github.com/Saghen/blink.cmp",
 		depends = { "friendly-snippets", "LuaSnip", "lspkind.nvim" },
@@ -57,6 +58,7 @@ require("mason-tool-installer").setup({
 })
 require("nvim-autopairs").setup()
 require("nvim-ts-autotag").setup()
+require("store").setup()
 
 -- Plugins Con Configuracion
 require("plugins.oil")
@@ -74,3 +76,4 @@ require("plugins.blink")
 
 -- Colorscheme Catppuccin
 vim.cmd.colorscheme("catppuccin-mocha")
+
