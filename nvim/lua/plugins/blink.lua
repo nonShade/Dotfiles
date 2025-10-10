@@ -106,7 +106,7 @@ return {
                 "fallback"
             },
 
-            -- Tab completamente libre para Copilot
+            -- Tab completamente deshabilitado para blink
             ["<Tab>"] = { "fallback" },
             ["<S-Tab>"] = { "fallback" },
 

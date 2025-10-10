@@ -59,6 +59,7 @@ require("mason-tool-installer").setup({
 require("nvim-autopairs").setup()
 require("nvim-ts-autotag").setup()
 require("store").setup()
+require("mcphub").setup()
 
 -- Plugins Con Configuracion
 require("plugins.oil")
@@ -69,11 +70,10 @@ require("plugins.statusline")
 require("plugins.multicursor")
 require("plugins.multicursor")
 require("plugins.formatter")
+require("plugins.blink")
 require("plugins.copilot")
 require("plugins.flash")
 require("plugins.lsp")
-require("plugins.blink")
 
 -- Colorscheme Catppuccin
 vim.cmd.colorscheme("catppuccin-mocha")
-
