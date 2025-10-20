@@ -59,7 +59,6 @@ require("mason-tool-installer").setup({
 require("nvim-autopairs").setup()
 require("nvim-ts-autotag").setup()
 require("store").setup()
-require("mcphub").setup()
 
 -- Plugins Con Configuracion
 require("plugins.oil")
