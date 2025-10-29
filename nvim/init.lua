@@ -1,5 +1,5 @@
-require('config.options')
-require('config.keymaps')
+require("config.options")
+require("config.keymaps")
 
 -- Carga de Plugins
-require('plugins')
+require("plugins")
