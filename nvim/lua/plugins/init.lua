@@ -1,4 +1,6 @@
 vim.pack.add({
+	-- Theme Plugins
+	{ src = "https://github.com/catppuccin/nvim" },
 	-- Dependencias
 	{ src = "https://github.com/nvim-mini/mini.icons" },
 	{ src = "https://github.com/MunifTanjim/nui.nvim" },
@@ -6,6 +8,7 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-lua/plenary.nvim" },
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
 	{ src = "https://github.com/L3MON4D3/LuaSnip" },
+	{ src = "https://github.com/folke/snacks.nvim" },
 	{ src = "https://github.com/OXY2DEV/markview.nvim" },
 	-- Plugins
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
@@ -13,7 +16,6 @@ vim.pack.add({
 	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/mason-org/mason-lspconfig.nvim" },
 	{ src = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" },
-	{ src = "https://github.com/catppuccin/nvim" },
 	{ src = "https://github.com/windwp/nvim-autopairs" },
 	{ src = "https://github.com/windwp/nvim-ts-autotag" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
@@ -29,6 +31,7 @@ vim.pack.add({
 	{ src = "https://github.com/3rd/image.nvim" },
 	{ src = "https://github.com/rachartier/tiny-code-action.nvim", depends = { "plenary.nvim", "telescope.nvim" } },
 	{ src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" },
+	{ src = "https://github.com/NickvanDyke/opencode.nvim", depends = { "snacks.nvim" } },
 })
 
 require("mason").setup()
@@ -53,6 +56,11 @@ require("mason-tool-installer").setup({
 	},
 })
 require("luasnip.loaders.from_vscode").lazy_load()
+require("snacks").setup({
+	input = {},
+	picker = {},
+	terminal = {},
+})
 require("nvim-autopairs").setup()
 require("nvim-ts-autotag").setup()
 require("image").setup()
@@ -71,6 +79,7 @@ require("plugins.lsp")
 require("plugins.blink")
 require("plugins.tiny-code")
 require("plugins.tiny-diagnostics")
+require("plugins.opencode")
 
--- Colorscheme Catppuccin
+-- Colorschemes enabled
 vim.cmd.colorscheme("catppuccin-mocha")
