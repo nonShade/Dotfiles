@@ -1,6 +1,7 @@
 vim.pack.add({
 	-- Theme Plugins
 	{ src = "https://github.com/catppuccin/nvim" },
+	{ src = "https://github.com/numToStr/Sakura.nvim" },
 	-- Dependencias
 	{ src = "https://github.com/nvim-mini/mini.icons" },
 	{ src = "https://github.com/MunifTanjim/nui.nvim" },
@@ -32,6 +33,7 @@ vim.pack.add({
 	{ src = "https://github.com/rachartier/tiny-code-action.nvim", depends = { "plenary.nvim", "telescope.nvim" } },
 	{ src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" },
 	{ src = "https://github.com/NickvanDyke/opencode.nvim", depends = { "snacks.nvim" } },
+	{ src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
 })
 
 require("mason").setup()
@@ -64,6 +66,7 @@ require("snacks").setup({
 require("nvim-autopairs").setup()
 require("nvim-ts-autotag").setup()
 require("image").setup()
+require("ibl").setup()
 
 -- Plugins Con Configuracion
 require("plugins.oil")
@@ -82,4 +85,5 @@ require("plugins.tiny-diagnostics")
 require("plugins.opencode")
 
 -- Colorschemes enabled
-vim.cmd.colorscheme("catppuccin-mocha")
+-- vim.cmd.colorscheme("catppuccin-mocha")
+vim.cmd.colorscheme("sakura")

@@ -1,50 +1,41 @@
 {
-
   "position": "top",
-  "exlusive": "true",
-  "passthrough": "true",
-  "gtk-layer-shell": "true",
+  "exclusive": true,
+  "passthrough": true,
+  "gtk-layer-shell": true,
   "margin-top": 0,
   "margin-left": 10,
   "margin-right": 10,
-  "height": 41,
+  "height": 36,
   "modules-left": [
-    "custom/weather",
-    "cpu",
-    "memory",
-    "disk",
-    "battery",
+    "hyprland/workspaces",
   ],
   "modules-center": [
-    "hyprland/workspaces"
+    "clock"
   ],
   "modules-right": [
-    // "hyprland/language",
+    "network",
+    "bluetooth",
     "pulseaudio",
     "pulseaudio#microphone",
-    "clock",
-    "separator",
-    "tray"
+    "memory",
+    "battery"
   ],
-
-
   "tray": {
-    "icon-size": 16,
-    "icon-theme": "Papirus",
-    "spacing": 2,
+    "icon-size": 18,
+    "icon-theme": "Papirus-Dark",
+    "spacing": 4,
+    "show-passive-items": true
   },
-   "custom/spacer": {
-        "format": " ", // Empty space
-        "tooltip": false
-  },
-  "separator": {
-    "format": " | "
+  "custom/spacer": {
+    "format": " ",
+    "tooltip": false
   },
   "hyprland/window": {
     "format": "{}",
-    "max-length": 35,
+    "max-length": 40,
     "rewrite": {
-      "": "Harsh"
+      "": "  Rose Pine Workspace"
     },
     "separate-outputs": true
   },
@@ -52,22 +43,21 @@
     "format": "{icon}",
     "on-click": "activate",
     "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": "",
-      "6": "",
-      "7": "",
-      "8": "",
-      "9": "",
-      "active": "",
-      "urgent": "",
-      "persistent": "",
-      "focused": "",
-      "default": "",
-
-        },
+      "1": "하",
+      "2": "나",
+      "3": "다",
+      "4": "라",
+      "5": "마",
+      "6": "바",
+      "7": "사",
+      "8": "아",
+      "9": "자",
+      "active": "●",
+      "urgent": "!",
+      "persistent": "○",
+      "focused": "●",
+      "default": "○"
+    },
     "sort-by-number": true,
     "persistent-workspaces": {
       "*": 9,
@@ -76,78 +66,71 @@
   },
   "clock": {
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "<span color='#89b4fa'>󰥔 </span><span color='#cdd6f4'>{:%H:%M | %a %d %b}</span>",
-    "format-alt": "{:%Y-%m-%d}"
+    "format": "󰥔 {:%H:%M}",
+    "format-alt": " {:%d-%m-%Y}"
   },
-
-  "cpu": {
-    "format": "<span color='#89b4fa'>󰍛</span> <span color='#cdd6f4'>{usage}%</span>",
-    "interval": 1,
-    "format-alt-click": "click",
-    "format-alt": "<span color='#00FF00'>{icon0}{icon1}{icon2}{icon3}</span> <span color='#FFFFFF'>{usage:>2}%</span> <span color='#00FF00'>󰍛</span>",
-    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
-    "on-click": "gnome-system-monitor"
+  "network": {
+    "format-wifi": "󰖩 {essid}",
+    "format-ethernet": "󰈀  {essid}",
+    "format-disconnected": "󰖪  Disconnected",
+    "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%): {ipaddr}/{cidr}",
+    "on-click": "nm-connection-editor"
+  },
+  "bluetooth": {
+    "format": "{icon}  {status}",
+    "format-disabled": "󰂲",
+    "format-off": "󰂲",
+    "format-on": "{icon}",
+    "format-connected": "{icon}  {device_alias}",
+    "format-icons": {
+      "enabled": "󰂯",
+      "disabled": "󰂲",
+      "off": "󰂲",
+      "on": "󰂯",
+      "connected": "󰂱"
+    },
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "on-click": "blueman-manager"
   },
   "memory": {
     "interval": 3,
-    "format": "<span color='#f38ba8'> </span> <span color='#cdd6f4'>{used:0.1f}G</span>"
+    "format": "{used:0.1f}G",
+    "tooltip-format": "RAM: {used:0.1f}G / {total:0.1f}G ({percentage}%)"
   },
-   
-
-"custom/weather": {
-    "exec": "~/.config/hypr/scripts/weather.sh",
-    "return-type": "json",
-    "interval": 600,
-    "format": "{text}"
-},
-
-
   "pulseaudio": {
-    "format": "<span color='#a6e3a1'>{icon} </span><span color='#cdd6f4'>{volume}%</span>",
-    "format-bluetooth": "<span color='#a6e3a1'>{icon}</span>  <span color='#cdd6f4'>{volume}%</span>",
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
     "tooltip": false,
-    "format-muted": "<span color='#f38ba8'></span>",
+    "format-muted": "󰖁",
     "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
-    "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 10%+",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 10%-",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 5%-",
+    "scroll-step": 5,
     "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
+      "headphone": "󰋋",
+      "hands-free": "󰋋",
+      "headset": "󰋎",
+      "phone": "",
+      "portable": "",
+      "car": "",
       "default": [
-        "",
-        "",
-        "",
+        "󰕿",
+        "󰖀",
+        "󰕾"
       ]
     }
   },
   "pulseaudio#microphone": {
     "format": "{format_source}",
-    "format-source": "<span color='#f38ba8'> </span><span color='#cdd6f4'>{volume}%</span>",
-    "format-source-muted": "",
+    "format-source": "󰍬 {volume}%",
+    "format-source-muted": "󰍭",
     "on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
     "on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 5%+",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 5%-",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 5%-"
   },
-
-   "hyprland/language": {
-
-  "format": "<span color='#f9e2af'>󰌌</span> <span color='#cdd6f4'>{}</span>",
-
-  "format-ar": "ara",
-
-  "format-en": "eng",
-
-},
-  "disk":{
-	"interval": 3,
-  "path": "/home",
-	"format": "<span color='#a6e3a1'> </span><span color='#cdd6f4'>{free}</span>",
-	"unit": "GB"
-},
   "battery": {
     "states": {
       "warning": 30,
@@ -155,18 +138,22 @@
     },
     "format": "{icon} {capacity}%",
     "format-full": "{icon} {capacity}%",
-    "format-charging": "  {capacity}%",
-    "format-plugged": "  {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰚥 {capacity}%",
     "format-alt": "{time} {icon}",
+    "tooltip-format": "{capacity}% - {timeTo}",
     "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
+      "󰂎",
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
     ]
-  },
-  "battery#bat2": {
-    "bat": "BAT2"
-  },
+  }
 }
