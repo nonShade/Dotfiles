@@ -1,0 +1,33 @@
+# NVIDIA Environment Variables Configuration
+# Uncomment these variables if you're using an NVIDIA GPU
+# See Hyprland wiki: https://wiki.hyprland.org/Nvidia/#environment-variables
+
+# =============================================================================
+# BASIC NVIDIA CONFIGURATION
+# =============================================================================
+# env = LIBVA_DRIVER_NAME,nvidia
+# env = __GLX_VENDOR_LIBRARY_NAME,nvidia
+# env = NVD_BACKEND,direct
+# env = GSK_RENDERER,ngl
+
+# =============================================================================
+# ADDITIONAL NVIDIA SETTINGS (use with caution)
+# =============================================================================
+# env = GBM_BACKEND,nvidia-drm
+# env = __GL_GSYNC_ALLOWED,1         # Adaptive VSync
+# env = __NV_PRIME_RENDER_OFFLOAD,1
+# env = __VK_LAYER_NV_optimus,NVIDIA_only
+# env = WLR_DRM_NO_ATOMIC,1
+
+# =============================================================================
+# NVIDIA FIREFOX HARDWARE ACCELERATION
+# =============================================================================
+# Check: https://github.com/elFarto/nvidia-vaapi-driver#configuration
+# env = MOZ_DISABLE_RDD_SANDBOX,1
+# env = EGL_PLATFORM,wayland
+
+# =============================================================================
+# VM AND SOFTWARE RENDERING (if needed)
+# =============================================================================
+# env = LIBGL_ALWAYS_SOFTWARE,1      # Warning: May cause Hyprland to crash
+# env = WLR_RENDERER_ALLOW_SOFTWARE,1
